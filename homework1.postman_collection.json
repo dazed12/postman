@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "a5b1f6c6-d9c1-4c3e-9b93-3a8b6d12cd6f",
 		"name": "homework1",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20442465"
 	},
 	"item": [
 		{
@@ -410,7 +411,7 @@
 							"});\r",
 							"// Спарсить response body в json\r",
 							"let jsonData = pm.response.json()\r",
-							"console.log (jsonData)\r",
+							"// console.log (jsonData)\r",
 							"\r",
 							"// Спарсить request\r",
 							"let req = (request.data)\r",
@@ -488,7 +489,9 @@
 							"    pm.expect(jsonData.person.u_salary_5_years).to.eql(+(req.salary * 4.2));\r",
 							"});\r",
 							"\r",
-							"\r",
+							"for (let person in jsonData.person){\r",
+							"        console.log(\"\" + person + \"=\"+ jsonData.person[person])\r",
+							"}\r",
 							""
 						],
 						"type": "text/javascript"
